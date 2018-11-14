@@ -1,0 +1,47 @@
+.example-icon {
+  padding: 0 14px;
+
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.app-title {
+  font-family: 'Monoton', cursive;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+
+.drawer {
+  width: 340px;
+}
+
+mat-drawer-container {
+  height: 100%
+}
+
+mat-card {
+  width: 280px;
+  margin: 10px;
+}
+
+
+.example-header-image {
+  background-image: url('https://media.licdn.com/dms/image/C4D03AQHBQyhJO8QuQQ/profile-displayphoto-shrink_100_100/0?e=1547683200&v=beta&t=zApN2Taa52TMhxx3igW71S2VkXXTkS0wrah-eyiKrW8');
+  background-size: cover;
+}
+
+.jp {
+  background-image: url('https://media.licdn.com/dms/image/C510BAQF_zIelQWSBvw/company-logo_400_400/0?e=1550102400&v=beta&t=41iOrnlUQUeMwUt27Z2TmFfYtD1hK71hO9b4Z_SvYwI');
+  background-size: cover;
+}
+.bms {
+  background-image: url('https://media.licdn.com/dms/image/C4E0BAQGcnTE1kwgg4g/company-logo_400_400/0?e=1550102400&v=beta&t=snrGVXBnBrb5XGdPu4QQ2yKWhH-XybyWqpP3bKyIcOU');
+  background-size: cover;
+}
+.icrm {
+  background-image: url('https://media.licdn.com/dms/image/C560BAQENZ-x36P6l0g/company-logo_400_400/0?e=1550102400&v=beta&t=vgyOdBtDPJsEAAzK41eT_XUUDoB6fFrm6DIl3rG7wP8');
+  background-size: cover;
+}

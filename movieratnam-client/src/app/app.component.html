@@ -1,0 +1,97 @@
+<mat-drawer-container hasBackdrop="false">
+  <mat-drawer class="drawer" #drawer mode="push">
+    <mat-card>
+      <mat-card-header>About the Developer
+      </mat-card-header>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Raheel Shah</mat-card-title>
+        <mat-card-subtitle>Sr Software Engineer</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Polyglot Programmer | Former Associate at JPMorgan Chase & Co| Former Mobile Lead BookMyShow</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Summary</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Experienced Senior Development Lead, Currently pursuing a Masters in Information Science and Technology from Rochester Institute of Technology with a demonstrated history of working with Startups, Investment Banks and Telecom industry. Skilled in Java, Javascript, ReactJS, Angular, Android, IOS - Swift 4, Front-End Development, Back-End Development, Data Analytics and Sciences, AB testing, CI/CD. Strong UI/UX understanding.
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Experience</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+         <div mat-card-avatar class="jp"></div>
+        <mat-card-title>JP Morgan Chase &amp; Co.</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li role="listitem">Developed and Deployed Web Applications for the Regulatory
+            Reporting Line of Business (LOB) using React JS and AngularJS.</li>
+          <li role="listitem">Guide the UI Team at JP Morgan Regulatory Reporting LOB on the
+            best practices and help in UX decision making.</li>
+          <li role="listitem">Research and Develop migration path on moving applications from
+            Angular JS to Angular 4.0 using the best practices and minimal time.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+         <div mat-card-avatar class="bms"></div>
+        <mat-card-title>BookMyShow</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li role="listitem">Direct and lead mobile development team from project initiation
+            through the delivery of final product.</li>
+          <li role="listitem">Started rebuilding the Mobile App for Android which currently has 27
+            Million Downloads and is India’s Largest Mobile Platform for Movie
+            Ticket Booking, also managed to successfully deliver the app with
+            utmost quality, scalability and robustness.</li>
+          <li role="listitem">Developed and mentored developers during the delivery of the new
+            revamped ticketing portal website.</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+         <div mat-card-avatar class="icrm"></div>
+        <mat-card-title>InteractCRM</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul>
+          <li role="listitem">Developed & Designing (UI/UX) in house products for Contact Center
+            Experience Portal. It is similar to a soft phone which allows a contact
+            center agent to handle any type of contact including Voice, Email,
+            Chat, SMS, Social Media, Fax, Voice Calls etc., on a single screen.</li>
+          <li role="listitem">Single handedly managed versioning and releasing of multiple
+            Customer builds.</li>
+          </ul>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+        <span class="app-title"> MovieRatnam</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon" color="accent">view_module</mat-icon>
+        <mat-icon class="example-icon">view_list</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet>
+    </router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

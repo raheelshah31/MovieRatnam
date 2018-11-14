@@ -1,0 +1,68 @@
+mat-card {
+  width: 155px;
+  font-size: 10px;
+  margin-bottom: 10px;
+  height: auto;
+}
+
+.title {
+  max-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: hidden;
+}
+
+.sub-title {
+  max-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+  color: grey;
+  text-overflow: hidden;
+  margin-top: 5px;
+}
+
+.col-xs-6 {
+  flex-basis: 50%;
+}
+
+mat-chip {
+  font-size: 8px;
+}
+
+.overlay {
+  width: 100%;
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background-image: url('../../assets/film-poster-placeholder.png');
+}
+
+.poster {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+#cdk-accordion-child-49>div {
+  padding: 5px !important;
+}
+
+mat-chip-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  mat-chip {
+    flex: 0 0 auto;
+  }
+}
+
+mat-card-actions>button {
+  width: 27%;
+  min-width: 0px !important;
+}
