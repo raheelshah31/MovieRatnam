@@ -1,4 +1,18 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
+
+@media only screen and (max-width: 768px) {
+  mat-card {
+    width: 200px !important;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-left: 25%;
+    height: auto;
+    color: red;
+  }
+
+}
+
 
 body{
 	margin: 0px;

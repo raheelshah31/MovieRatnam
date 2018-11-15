@@ -40,7 +40,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MovieLandingComponent } from './movie-landing/movie-landing.component';
 import { MovieCardsComponent } from './movie-cards/movie-cards.component';
 import { MatRippleModule } from '@angular/material/core';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
 	declarations: [

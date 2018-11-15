@@ -37,10 +37,12 @@ mat-card {
   background-image: url('https://media.licdn.com/dms/image/C510BAQF_zIelQWSBvw/company-logo_400_400/0?e=1550102400&v=beta&t=41iOrnlUQUeMwUt27Z2TmFfYtD1hK71hO9b4Z_SvYwI');
   background-size: cover;
 }
+
 .bms {
   background-image: url('https://media.licdn.com/dms/image/C4E0BAQGcnTE1kwgg4g/company-logo_400_400/0?e=1550102400&v=beta&t=snrGVXBnBrb5XGdPu4QQ2yKWhH-XybyWqpP3bKyIcOU');
   background-size: cover;
 }
+
 .icrm {
   background-image: url('https://media.licdn.com/dms/image/C560BAQENZ-x36P6l0g/company-logo_400_400/0?e=1550102400&v=beta&t=vgyOdBtDPJsEAAzK41eT_XUUDoB6fFrm6DIl3rG7wP8');
   background-size: cover;

@@ -1,10 +1,11 @@
-let mongoose = require('mongoose')
+let mongoose = require('mongoose').set('debug', true);
 
-const server = 'localhost:27017'
-const database = 'moviedb'
+const server = 'ds029831.mlab.com:29831'
+const database = 'moviemetadata'
+const options = {useNewUrlParser: true , user: 'Sreecharan', pass: 'Sree@1015'};
+const dbUrl = `mongodb://${server}/${database}`
 
-
-mongoose.connect(`mongodb://${server}/${database}`)
+mongoose.connect(dbUrl,options)
 
 let MovieSchema = new mongoose.Schema({
     color: {
