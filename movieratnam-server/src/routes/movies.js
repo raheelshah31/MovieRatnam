@@ -1,44 +1,36 @@
 let MovieModel = require('../models/movie.model')
 let express = require('express')
 let router = express.Router()
+var ObjectId = require('mongoose').Types.ObjectId;
 
-// Create a new customer
-// POST localhost:3000/customer
-router.post('/movies', (req, res) => {
-    if (!req.body) {
-        return res.status(400).send('Request body is missing')
-    }
+var mongoose = require('mongoose');
+var gridfs = require('gridfs-stream');
+const server = 'ds157493.mlab.com:57493'
+const database = 'movie_images'
+const options = { useNewUrlParser: true, user: 'cherry1155', pass: 'sree@1015' };
+const dbUrl = `mongodb://${server}/${database}`
+var conn = mongoose.connect(dbUrl, options)
+/*
+    Check MongoDB connection
+*/
+var connection = mongoose.connection;
+connection.on('error', console.error.bind(console, 'connection error:'));
+mongoose.Promise = global.Promise;
 
-    if (!req.body.email) {
-        // ...
-    }
+gridfs.mongo = mongoose.mongo;
 
-    // let user = {
-    //   name: 'firstname lastname',
-    //   email: 'email@gmail.com'
-    // }
-
-    let model = new MovieModel(req.body)
-    model.save()
-        .then(doc => {
-            if (!doc || doc.length === 0) {
-                return res.status(500).send(doc)
-            }
-
-            res.status(201).send(doc)
-        })
-        .catch(err => {
-            res.status(500).json(err)
-        })
-})
 
 // GET
 router.get('/movies', (req, res) => {
     if (req.query.query) {
-        MovieModel.find({$or:[{director_name:{ '$regex' : req.query.query, '$options' : 'i' }},
-          {genre:{ '$regex' : req.query.query, '$options' : 'i' }},
-          { movie_title: { '$regex' : req.query.query, '$options' : 'i' }}
-          ]}).sort([['imdb_score', 'descending']])
+        MovieModel.find({
+                $or: [{ director_name: { '$regex': "^" + req.query.query, '$options': 'i' } },
+                    { genre: { '$regex': "^" + req.query.query, '$options': 'i' } },
+                    { movie_title: { '$regex': "^" + req.query.query, '$options': 'i' } }
+                ]
+            }).sort([
+                ['imdb_score', 'descending']
+            ])
             .then(doc => {
                 res.json(doc)
             })
@@ -46,7 +38,9 @@ router.get('/movies', (req, res) => {
                 res.status(500).json(err)
             })
     } else {
-        MovieModel.find({movie_poster: {$exists: true}}).sort([['imdb_score', 'descending']]).limit(120)
+        MovieModel.find({ movie_poster: { $exists: true } }).sort([
+                ['imdb_score', 'descending']
+            ]).limit(120)
             .then(doc => {
                 res.json(doc)
             })
@@ -57,23 +51,46 @@ router.get('/movies', (req, res) => {
 })
 
 // UPDATE
-router.put('/movies', (req, res) => {
-    if (!req.query.movie_title) {
-        return res.status(400).send('Missing URL parameter: movie_title')
+router.post('/movies', (req, res) => {
+    if (!req.body) {
+        return res.status(400).send('Request body is missing')
     }
 
-    MovieModel.findOneAndUpdate({
-            movie_title: req.query.movie_title
-        }, req.body, {
-            new: true
+    MovieModel.findOneAndUpdate({ _id: req.body.id }, { $push: { comments: req.body.comments } }, {
+            new: true,
         })
         .then(doc => {
-            res.json(doc)
+            // console.log(doc)
+            res.status(200).send(doc)
         })
         .catch(err => {
             res.status(500).json(err)
         })
+
 })
+
+//GET Images
+connection.once('open', () => {
+
+    var gfs = gridfs(connection.db);
+    console.log(gfs)
+    //gfs.collection("fs.files")
+    // Downloading a single file
+    router.get('/movies/:fileId', (req, res) => {
+        console.log(req.params.fileId)
+        gfs.exist({ _id: req.params.fileId }, (err, file) => {
+            if (err || !file) {
+                console.log(err)
+                res.status(404).send('File Not Found');
+                return
+            } 
+            
+            var readstream = gfs.createReadStream({ _id: req.params.fileId });
+            readstream.pipe(res);            
+        });
+    });
+});
+
 
 // DELETE
 router.delete('/movies', (req, res) => {

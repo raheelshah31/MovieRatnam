@@ -15,6 +15,10 @@ export class MoviesService {
 	searchMovies(query) {
 		return this.http.get<Movies>(this.movieServerURl + "?query=" + query);
 	}
+
+	updateComments(data){
+		return this.http.post(this.movieServerURl,data);
+	}
 }
 
 export interface Movies {
@@ -48,4 +52,5 @@ export interface Movies {
 	aspect_ratio?: number;
 	movie_facebook_likes: number;
 	movie_poster?: string;
+	comments:Array<String>;
 }

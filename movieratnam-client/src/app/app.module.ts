@@ -41,12 +41,14 @@ import { MovieLandingComponent } from './movie-landing/movie-landing.component';
 import { MovieCardsComponent } from './movie-cards/movie-cards.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		MovieLandingComponent,
-		MovieCardsComponent
+		MovieCardsComponent,
+		MovieDetailsComponent
 	],
 	imports: [
 		BrowserModule,
@@ -89,6 +91,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 		MatBadgeModule
 
 	],
+	entryComponents:[MovieDetailsComponent],
 	providers: [],
 	bootstrap: [AppComponent]
 })

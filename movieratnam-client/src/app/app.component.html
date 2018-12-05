@@ -82,13 +82,13 @@
     </mat-card>
   </mat-drawer>
   <mat-drawer-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="app-toolbar">
       <mat-toolbar-row>
-        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+        <mat-icon  matRipple [matRippleCentered]="true" (click)="drawer.toggle()">menu</mat-icon>
         <span class="app-title"> MovieRatnam</span>
         <span class="example-spacer"></span>
-        <mat-icon class="example-icon" color="accent">view_module</mat-icon>
-        <mat-icon class="example-icon">view_list</mat-icon>
+        <mat-icon matRipple [matRippleCentered]="true"  class="example-icon" color="accent">view_module</mat-icon>
+        <mat-icon matRipple [matRippleCentered]="true"  class="example-icon">view_list</mat-icon>
       </mat-toolbar-row>
     </mat-toolbar>
     <router-outlet>

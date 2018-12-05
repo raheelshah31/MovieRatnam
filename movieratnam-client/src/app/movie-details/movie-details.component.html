@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>{{data.movie_title}}</h1>
+<div mat-dialog-content class="container">
+  <div>
+    <div class="left">
+      <div class="ph-picture overlay"><img *ngIf="data.movie_poster" class="poster" src="{{data.movie_poster}}"/></div>
+      </div>
+      <div class="right">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Director</mat-card-title>
+          </mat-card-header>
+          <button mat-raised-button color="accent">{{data.director_name}}</button>
+        </mat-card>
+      </div>
+    </div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Genre</mat-card-title>
+      </mat-card-header>
+      <button mat-raised-button>{{data.genres}}</button>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Country</mat-card-title>
+      </mat-card-header>
+      <button mat-raised-button>{{data.country}}</button>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Lead Actors</mat-card-title>
+      </mat-card-header>
+      <button mat-raised-button>{{data.actor_1_name}}</button>
+      <button mat-raised-button>{{data.actor_2_name}}</button>
+      <button mat-raised-button>{{data.actor_3_name}}</button>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <div *ngIf="data.comments.length !== 0">
+      <mat-toolbar color="accent">Comments</mat-toolbar>
+      <div *ngFor="let comment of data.comments;">
+        <div class="dialogbox">
+          <div class="body">
+            <span class="tip tip-left"></span>
+            <div class="message">
+              <span>{{comment}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions align="end">
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="Leave a comment" (input)="comment = $event.target.value"></textarea>
+    </mat-form-field>
+    <button mat-raised-button (click)="addComment()" color="primary">Add Comment</button>
+    <button mat-raised-button (click)="close()" color="primary">Close</button>
+  </div>

@@ -26,10 +26,11 @@ input {
 }
 
 .search-form {
-  max-width: 70%;
+  max-width: 80%;
   margin: 10px auto;
   margin-bottom: 40px;
 }
+
 
 input.search {
   margin: 0;
@@ -37,7 +38,7 @@ input.search {
   outline: 0;
   border: 10px solid #F7F7F7;
   font-family: 'Open Sans', sans-serif;
-  right: 5%;
+  right: 3%;
   position: relative;
   top: 10px;
   bottom: 10px;

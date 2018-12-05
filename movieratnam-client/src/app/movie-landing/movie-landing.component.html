@@ -1,7 +1,9 @@
-<mat-progress-bar *ngIf="!this.movies" mode="query" color="accent"></mat-progress-bar>
+<mat-progress-bar *ngIf="!this.movies" mode="indeterminate" color="accent"></mat-progress-bar>
 <div class="search-form">
   <input type="text" class="search" [formControl]="search" placeholder="Search for Movies">
+
 </div>
+
 <div class="container" *ngIf="this.movies">
   <app-movie-cards [movies]="this.movies"></app-movie-cards>
 </div>

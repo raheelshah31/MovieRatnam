@@ -1,8 +1,8 @@
 let mongoose = require('mongoose').set('debug', true);
 
-const server = 'ds029831.mlab.com:29831'
-const database = 'moviemetadata'
-const options = {useNewUrlParser: true , user: 'Sreecharan', pass: 'Sree@1015'};
+const server = 'ds157493.mlab.com:57493'
+const database = 'movie_images'
+const options = {useNewUrlParser: true , user: 'cherry1155', pass: 'sree@1015'};
 const dbUrl = `mongodb://${server}/${database}`
 
 mongoose.connect(dbUrl,options)
@@ -92,7 +92,7 @@ let MovieSchema = new mongoose.Schema({
     movie_facebook_likes: {
         type: 'Number'
     },
-    movie_poster: { type: 'String' }
-})
+    movie_poster: { type: 'String' },comments:{type:'Array'}
+},{ strict: false })
 
 module.exports = mongoose.model('Movies', MovieSchema)
