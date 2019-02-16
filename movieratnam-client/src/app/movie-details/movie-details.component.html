@@ -2,7 +2,7 @@
 <div mat-dialog-content class="container">
   <div>
     <div class="left">
-      <div class="ph-picture overlay"><img *ngIf="data.movie_poster" class="poster" src="{{data.movie_poster}}"/></div>
+      <div class="ph-picture overlay"><img *ngIf="data.movie_poster" class="poster" src="{{data.grid_id?'api/movies/'+data.grid_id:data.movie_poster}}"/></div>
       </div>
       <div class="right">
         <mat-card>
